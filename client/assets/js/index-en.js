@@ -1,4 +1,4 @@
-const API_URL = '/';
+const API_URL = '/node/';
 const converter = new showdown.Converter();
 let promptToRetry = null;
 let uniqueIdToRetry = null;
