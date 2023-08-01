@@ -190,7 +190,7 @@ function drawHeader() {
 }
 
 function drawFooter() {
-    let footerdevelop = '© Розроблено студентами Вінницької ІТ-академії 2023', developerlink = 'https://starkon.pp.ua';
+    let footerdevelop = '© 2023 Перетворимо ваші ідеї в онлайн реальність: Веб Студія Starkon Hub', developerlink = 'https://starkon.pp.ua';
 
     if (langEn) {
         footerdevelop = '© Developed by students of Vinnytsia IT Academy 2023', developerlink = 'https://starkon.pp.ua';

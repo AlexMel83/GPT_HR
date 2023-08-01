@@ -163,14 +163,14 @@ async function getGPTResult(_promptToRetry, _uniqueIdToRetry) {
     const origPromt = prompt;
     if (prompt.trim() === "#start" || !prevQuestion) {
         if (countSelect.value == 7) {
-            prompt = `Ти проводиш співбесіду. Задай ${countSelect.value} питань по темі ${interviewSelect.value}.`;
+            prompt = `Ти проводиш співбесіду. Задай перше питання з ${countSelect.value} питань по темі ${interviewSelect.value}.`;
         } else {
-            prompt = `Ти проводиш співбесіду. Задай ${countSelect.value} питання по темі ${interviewSelect.value}.`;
+            prompt = `Ти проводиш співбесіду. Задай перше питання з ${countSelect.value} питання по темі ${interviewSelect.value}.`;
         }
     } else if (countQueries > 0) {
         prompt = `Оціни відповідь '${prompt.trim()}' на питання по 100 бальній системі '${prevQuestion.trim()}'. 
         Якщо треба доповни відповідь або дай правильну. 
-        Задавай питання після відповіді ${interviewSelect.value}`;
+        Задавай наступні питання після відповіді ${interviewSelect.value}`;
     } else {
         addResponse(0, startText);
         return;
