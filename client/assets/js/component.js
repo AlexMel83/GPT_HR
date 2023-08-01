@@ -72,12 +72,12 @@ function drawHeader() {
     let mobLangSelect = `<a class="lang-select" href=${hrefLangUA()}>UA</a>
                     <div class="vertical"></div>
                 <a href=${hrefLangEN()}>EN</a>`;
-    let aboutus = 'Про нас', abutuslink = 'https://careerboosters.fromavdiivka.city/index.html', navlern = 'Навчальний розділ', navlernlink = 'https://careerboosters.fromavdiivka.city/education.html',
-        navorder = 'Замовити проект', navorderlink = 'https://careerboosters.fromavdiivka.city/customers.html', ansvers = 'Відповіді', ansverslink = 'https://careerboosters.fromavdiivka.city/index.html#block-3';
+    let aboutus = 'Про нас', abutuslink = 'https://starkon.pp.ua', navlern = 'Навчальний розділ', navlernlink = 'https://starkon.pp.ua',
+        navorder = 'Замовити проект', navorderlink = 'https://starkon.pp.ua', ansvers = 'Відповіді', ansverslink = 'https://starkon.pp.ua';
 
     if (langEn) {
-        aboutus = 'About us', abutuslink = 'https://careerboosters.fromavdiivka.city/index-en.html', navlern = 'Study section', navlernlink = 'https://careerboosters.fromavdiivka.city/education-en.html',
-            navorder = 'Order a project', navorderlink = 'https://careerboosters.fromavdiivka.city/customers-en.html', ansvers = 'Ansvers', ansverslink = 'https://careerboosters.fromavdiivka.city/index.html-en#block-3';
+        aboutus = 'About us', abutuslink = 'https://starkon.pp.ua', navlern = 'Study section', navlernlink = 'https://starkon.pp.ua',
+            navorder = 'Order a project', navorderlink = 'https://starkon.pp.ua', ansvers = 'Ansvers', ansverslink = 'https://starkon.pp.ua';
         navLangSelect = `EN</span>
                     <ul class="dropdown-menu lang">
                     <li><a class="dropdown-item lang" href=${hrefLangUA()}>UA</a></li>
@@ -88,15 +88,15 @@ function drawHeader() {
     }
 
     if (document.title == 'ChatGPT Front-end') {
-        abutuslink = 'https://careerboosters.fromavdiivka.city/index.html', navlernlink = 'https://careerboosters.fromavdiivka.city/education.html', navorderlink = 'https://careerboosters.fromavdiivka.city/customers.html', ansverslink = 'https://careerboosters.fromavdiivka.city/index.html#block-3';
+        abutuslink = 'https://starkon.pp.ua', navlernlink = 'https://starkon.pp.ua', navorderlink = 'https://starkon.pp.ua', ansverslink = 'https://starkon.pp.ua';
         if (langEn) {
-            abutuslink = 'https://careerboosters.fromavdiivka.city/index-en.html', navlernlink = 'https://careerboosters.fromavdiivka.city/education-en.html', navorderlink = 'https://careerboosters.fromavdiivka.city/customers-en.html', ansverslink = 'https://careerboosters.fromavdiivka.city/index-en.html#block-3';
+            abutuslink = 'https://starkon.pp.ua', navlernlink = 'https://starkon.pp.ua', ansverslink = 'https://starkon.pp.ua';
 
         }
 
         header.innerHTML = `<nav class="navbar navbar-expand-lg bg-body-tertiary menu">
         <div class="container-fluid header-menu">
-            <a href="https://careerboosters.fromavdiivka.city/index.html" title="">
+            <a href="https://starkon.pp.ua" title="">
                 <div class="header-logo"></div>
             </a>
             <div class="mob-lang-select">
@@ -143,7 +143,7 @@ function drawHeader() {
     } else {
         header.innerHTML = `<nav class="navbar navbar-expand-lg bg-body-tertiary menu">
     <div class="container-fluid header-menu">
-        <a href="index.html" title="">
+        <a href="https://starkon.pp.ua" title="">
             <div class="header-logo"></div>
         </a>
         <div class="mob-lang-select">
@@ -190,15 +190,15 @@ function drawHeader() {
 }
 
 function drawFooter() {
-    let footerdevelop = '© Розроблено студентами Вінницької ІТ-академії 2023', developerlink = 'https://careerboosters.fromavdiivka.city/developer.html';
+    let footerdevelop = '© Розроблено студентами Вінницької ІТ-академії 2023', developerlink = 'https://starkon.pp.ua';
 
     if (langEn) {
-        footerdevelop = '© Developed by students of Vinnytsia IT Academy 2023', developerlink = 'https://careerboosters.fromavdiivka.city/developer-en.html';
+        footerdevelop = '© Developed by students of Vinnytsia IT Academy 2023', developerlink = 'https://starkon.pp.ua';
     }
     if (document.title == 'ChatGPT Front-end') {
-        developerlink = 'https://careerboosters.fromavdiivka.city/developer.html'
+        developerlink = 'https://starkon.pp.ua'
         if (langEn) {
-            footerdevelop = '© Developed by students of Vinnytsia IT Academy 2023', developerlink = 'https://careerboosters.fromavdiivka.city/developer-en.html';
+            footerdevelop = '© Developed by students of Vinnytsia IT Academy 2023', developerlink = 'https://starkon.pp.ua';
         }
     }
     footer.innerHTML = `<div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
