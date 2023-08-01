@@ -157,11 +157,16 @@ async function getGPTResult(_promptToRetry, _uniqueIdToRetry) {
         await getWhisperResult();
         return;
     }
+
     // Get the prompt input
     let prompt = _promptToRetry ?? promptInput.textContent;
     const origPromt = prompt;
     if (prompt.trim() === "#start" || !prevQuestion) {
-        prompt = `You are conducting an interview. Ask one question on the subject ${interviewSelect.value}.`;
+        if (countSelect.value == 1) {
+            prompt = `You are conducting an interview. Ask ${countSelect.value} question on the subject ${interviewSelect.value}.`;
+        } else {
+            prompt = `You are conducting an interview. Ask ${countSelect.value} questions on the subject ${interviewSelect.value}.`;
+        }
     } else if (countQueries > 0) {
         prompt = `Rate the answers '${prompt.trim()}' to questions on a 100-point system '${prevQuestion.trim()}'. 
         If necessary, complete the answer or give the correct answer. Ask the question after the answer ${interviewSelect.value}`;

@@ -12,7 +12,7 @@ const fileInput = document.getElementById("text-file");
 
 let prevQuestion = "";
 // let countQueries = Number(countSelect.value);
-const startText = "In order for ChatGPT to evaluate your resume, upload it as a text in the field or as a file";
+const startText = "In order for ChatGPT to evaluate your resume, upload it as a text in the field";
 
 addResponse(0, startText);
 
