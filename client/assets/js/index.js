@@ -1,7 +1,13 @@
-const API_URL = '/node/';
 const converter = new showdown.Converter();
+const API_URL = '/';
+if (document.location.pathname.includes('node')) {
+    API_URL = '/node/';
+}
 let promptToRetry = null;
 let uniqueIdToRetry = null;
+if (document.location.pathname.includes('node')) {
+    API_URL = '/node/';
+}
 
 const submitButton = document.getElementById('submit-button');
 const regenerateResponseButton = document.getElementById('regenerate-response-button');
@@ -162,15 +168,10 @@ async function getGPTResult(_promptToRetry, _uniqueIdToRetry) {
     let prompt = _promptToRetry ?? promptInput.textContent;
     const origPromt = prompt;
     if (prompt.trim() === "#start" || !prevQuestion) {
-        if (countSelect.value == 7) {
-            prompt = `Ти проводиш співбесіду. Задай перше питання з ${countSelect.value} питань по темі ${interviewSelect.value}.`;
-        } else {
-            prompt = `Ти проводиш співбесіду. Задай перше питання з ${countSelect.value} питання по темі ${interviewSelect.value}.`;
-        }
-    } else if (countQueries > 0) {
-        prompt = `Оціни відповідь '${prompt.trim()}' на питання по 100 бальній системі '${prevQuestion.trim()}'. 
-        Якщо треба доповни відповідь або дай правильну. 
-        Задавай наступні питання після відповіді ${interviewSelect.value}`;
+        prompt = `Ти проводиш співбесіду. Задай одне питання з ${countSelect.value} по темі ${interviewSelect.value}.`;
+    } else if (countQueries > 1) {
+        prompt = `Оціни відповідь '${prompt.trim()}' на питання '${prevQuestion.trim()}' по 100 бальній системі. 
+        Якщо треба доповни відповідь або дай правильну. Задавай наступні питання після відповіді ${interviewSelect.value}`;
     } else {
         addResponse(0, startText);
         return;
@@ -190,7 +191,7 @@ async function getGPTResult(_promptToRetry, _uniqueIdToRetry) {
 
     if (!_uniqueIdToRetry) {
         // Add the prompt to the response list
-        addResponse(true, `<div>${origPromt}</div>`);
+        addResponse(true, `< div > ${origPromt}</ > `);
     }
 
     // Get a unique ID for the response element
@@ -222,7 +223,7 @@ async function getGPTResult(_promptToRetry, _uniqueIdToRetry) {
             prevQuestion = responseText.split(":")
             prevQuestion = prevQuestion[prevQuestion.length - 1]
             setRetryResponse(prompt, uniqueId);
-            setErrorForResponse(responseElement, `HTTP Error: ${responseText}`);
+            setErrorForResponse(responseElement, `HTTP Error: ${responseText} `);
             return;
         }
         const responseText = await response.text();
@@ -231,7 +232,7 @@ async function getGPTResult(_promptToRetry, _uniqueIdToRetry) {
         prevQuestion = prevQuestion[prevQuestion.length - 1]
         if (model === 'image') {
             // Show image for `Create image` model
-            responseElement.innerHTML = `<img src="${responseText}" class="ai-image" alt="generated image"/>`
+            responseElement.innerHTML = `< img src = "${responseText}" class="ai-image" alt = "generated image" /> `
         } else {
             // Set the response text
             responseElement.innerHTML = converter.makeHtml(responseText.trim());
@@ -248,7 +249,7 @@ async function getGPTResult(_promptToRetry, _uniqueIdToRetry) {
     } catch (err) {
         setRetryResponse(prompt, uniqueId);
         // If there's an error, show it in the response element
-        setErrorForResponse(responseElement, `Error: ${err.message}`);
+        setErrorForResponse(responseElement, `Error: ${err.message} `);
     } finally {
         // Set isGeneratingResponse to false
         isGeneratingResponse = false;

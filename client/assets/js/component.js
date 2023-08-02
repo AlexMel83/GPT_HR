@@ -127,12 +127,12 @@ function drawHeader() {
                 <div class="header-icon-social">
                     <a href="#" class="social-link icon" title="facebook" target="_blank">
                         <svg svg="" class="icon">
-                            <use xlink:href="../img/sprite.svg#facebook"></use>
+                            <use xlink:href="assets/img/sprite.svg#facebook"></use>
                         </svg>
                     </a>
                     <a href="#" class="social-link icon" title="instagram" target="_blank">
                         <svg class="icon">
-                            <use xlink:href="../img/sprite.svg#instagram"></use>
+                            <use xlink:href="assets/img/sprite.svg#instagram"></use>
                         </svg>
                     </a>
                 </div>
@@ -174,12 +174,12 @@ function drawHeader() {
             <div class="header-icon-social">
                 <a href="#" class="social-link icon" title="facebook" target="_blank">
                     <svg svg="" class="icon">
-                        <use xlink:href="../img/sprite.svg#facebook"></use>
+                        <use xlink:href="assets/img/sprite.svg#facebook"></use>
                     </svg>
                 </a>
                 <a href="#" class="social-link icon" title="instagram" target="_blank">
                     <svg class="icon">
-                        <use xlink:href="../img/sprite.svg#instagram"></use>
+                        <use xlink:href="assets/img/sprite.svg#instagram"></use>
                     </svg>
                 </a>
             </div>
@@ -241,7 +241,7 @@ function drawFooter() {
         </ul>
     </div>
     <svg class="scroll-up">
-        <use xlink:href="../img/sprite.svg#scroll-up"></use>
+        <use xlink:href="assets/img/sprite.svg#scroll-up"></use>
     </svg>`;
 }
 
